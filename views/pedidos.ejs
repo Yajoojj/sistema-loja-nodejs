@@ -1,0 +1,22 @@
+﻿<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<h2 class="mb-4">Histórico de Compras</h2>
+<table class="table table-bordered table-striped">
+    <thead class="table-secondary">
+    <tr>
+        <th>Número do Pedido</th>
+        <th>Valor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% pedidos.forEach(p => { %>
+        <tr>
+            <td><%= p.numero %></td>
+            <td>R$ <%= p.valor.toFixed(2) %></td>
+        </tr>
+    <% }) %>
+    </tbody>
+</table>
+
+<%- include('partials/footer') %>

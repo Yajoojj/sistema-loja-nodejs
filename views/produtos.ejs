@@ -1,0 +1,30 @@
+﻿<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<h2 class="mb-4">Produtos</h2>
+<table class="table table-bordered table-striped table-hover">
+    <thead class="table-primary">
+    <tr>
+        <th>Imagem</th>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Categoria</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% produtos.forEach(p => { %>
+        <tr>
+            <td>
+                <img src="/imagens/rp.png<%= p.Imagem %>" alt="<%= p.nome %>" style="width: 40px; height: auto;">
+
+
+            </td>
+            <td><%= p.nome %></td>
+            <td>R$ <%= p.preco.toFixed(2) %></td>
+            <td><%= p.categoria %></td>
+        </tr>
+    <% }) %>
+    </tbody>
+</table>
+
+<%- include('partials/footer') %>
